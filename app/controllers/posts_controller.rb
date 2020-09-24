@@ -48,7 +48,9 @@ protected
 
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == "test" && password == "test"
+      admin_username == "admin"
+	  admin_password == "JXyScH5g3Apn"
+	  session[:admin] = true if (username == admin_username && password == admin_password)
   end
 
 end
